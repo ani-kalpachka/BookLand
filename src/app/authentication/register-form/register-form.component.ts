@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterModel } from '../models/register.model';
-import { AuthenticationService } from '../auth.service';]
-import { Router } from '@angular/router';
+import { AuthenticationService } from '../auth.service';
 
 @Component({
   selector: 'app-register-form',
@@ -15,8 +14,7 @@ export class RegisterFormComponent  {
   public registerFail : boolean;
 
   constructor(
-    private authService : AuthenticationService,
-    private router : Router    
+    private authService : AuthenticationService
   ) { 
     this.model = new RegisterModel("", "", "", "");
   }
@@ -40,6 +38,5 @@ export class RegisterFormComponent  {
   successfulRegister(data) : void {
     this.registerSuccess = true;
     this.registeredUser = data['username'];
-    this.router.navigate(['/login']);    
   }
 }

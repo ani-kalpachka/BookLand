@@ -1,0 +1,8 @@
+<h4>Current Offers:</h4>
+<ul>
+    <li *ngFor="let book of books">
+        <a [routerLink]="['/books/details/', book.id]">
+            {{ book.title }}         
+        </a>
+    </li>
+</ul>

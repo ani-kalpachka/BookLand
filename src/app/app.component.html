@@ -7,9 +7,10 @@
     <div *ngIf="!authService.isLoggedIn()">
         <a routerLink="/login">Login</a>
         <a routerLink="/register">Register</a>
-    </div>
+      </div>
     <div *ngIf="authService.isLoggedIn()">
       <a routerLink="/home">Home</a>
+      <a routerLink="/books">All Books</a>
       <a routerLink="/logout">Logout</a>
     </div>
   </nav>
