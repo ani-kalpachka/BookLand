@@ -1,0 +1,53 @@
+h1 {
+    color: brown;
+    font-style: italic;
+    font-family: serif;
+    font-size: 42px;
+    margin-right: 50%;
+    display: inline;
+    vertical-align: middle;
+    z-index: 1;
+    position: fixed;
+    left: 10%;
+    top: -4%;
+}
+
+#wrapper {
+    background-color: rosybrown;
+    border: 1px solid mediumvioletred;    
+    height: 700px;
+}
+
+.inner-content-wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.nav-menu {
+    display: inline-block;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: ghostwhite;    
+    width: 100%;
+    border-bottom: 1px solid mediumvioletred;
+    height: 65px;
+    padding-top: 20px;
+}
+
+a {
+    color: orangered;
+    padding-right: 7px;
+    font-size: 17px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+#menu {
+    padding-left: 50%;
+}

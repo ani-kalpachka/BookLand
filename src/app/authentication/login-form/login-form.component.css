@@ -1,0 +1,37 @@
+#login-form {
+    width: 50%;
+    padding-top: 75px;
+    display: table;
+    margin: 0 auto;
+}
+
+h1 {
+    color: ghostwhite;
+    text-align: center;
+}
+
+label {
+    color: ghostwhite;
+    font-size: 17px;
+}
+
+button {
+    color: brown;
+    font-weight: bold;
+    font-size: 15px;
+    display: table;
+    width: 50%;
+    background-color: navajowhite;
+    border: 1px solid brown;
+    margin: 8% auto;
+}
+
+button:hover {
+    background-color: brown;
+    color: navajowhite;    
+    border: 1px solid brown;
+}
+
+input {
+    border: 1px solid brown;    
+}
