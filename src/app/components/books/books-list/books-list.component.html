@@ -1,9 +1,11 @@
-<h4>Current Offers:</h4>
-<ul>
-    <li *ngFor="let book of books">
-        <a [routerLink]="['/books/details/', book.id]">
-            {{ book.title }}
-        </a>
-        <img class="img-responsive" src="{{ book.cover }}" alt="image">        
-    </li>
-</ul>
+<div>
+    <h4>Current Offers:</h4>
+    <ul>
+        <li *ngFor="let book of books">
+            <a [routerLink]="['/books/details/', book.id]">
+                {{ book.title }}
+            </a>
+            <img class="img-responsive" src="{{ book.cover }}" alt="image">        
+        </li>
+    </ul>
+</div>

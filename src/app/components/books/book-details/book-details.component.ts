@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { BooksService } from '../../../core/services/books/book.service';
 import { BookViewModel } from '../../../core/models/book-view.model';
+import { AuthenticationService } from '../../../authentication/auth.service';
 
 @Component({
     templateUrl: '/book-details.component.html',
@@ -13,7 +14,8 @@ public book : BookViewModel;
 
     constructor( 
         private booksService : BooksService,
-        private activatedRoute : ActivatedRoute
+        private activatedRoute : ActivatedRoute,
+        private authService : AuthenticationService
     ) { }
 
     ngOnInit() {

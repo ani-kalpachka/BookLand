@@ -1,4 +1,5 @@
 import { Component }  from "@angular/core";
+import { AuthenticationService } from '../../authentication/auth.service';
 
 @Component({
   templateUrl: './home.components.html',
@@ -6,6 +7,7 @@ import { Component }  from "@angular/core";
 })
 export class HomeComponent { 
   public username : string;
+  private authService : AuthenticationService;
 
   constructor() {
     this.username = localStorage.getItem('username');

@@ -16,7 +16,7 @@ const routes : Routes = [
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'books', loadChildren: "app/components/books/books.module#BooksModule" }  
+  { path: 'books', canActivate: [ AuthGuard ], loadChildren: "app/components/books/books.module#BooksModule" }  
 ]
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
