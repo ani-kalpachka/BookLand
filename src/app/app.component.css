@@ -9,7 +9,8 @@ h1 {
     z-index: 1;
     position: fixed;
     left: 10%;
-    top: -4%;
+    top: -2%;
+    z-index: 40;
 }
 
 #wrapper {
@@ -35,6 +36,7 @@ nav {
     border-bottom: 1px solid mediumvioletred;
     height: 65px;
     padding-top: 20px;
+    z-index: 30;
 }
 
 a {
@@ -50,4 +52,11 @@ a:hover {
 
 #menu {
     padding-left: 50%;
+}
+
+footer {
+    clear: both;
+    color: white;
+    font-size: 15px;
+    margin-top: 50px;
 }

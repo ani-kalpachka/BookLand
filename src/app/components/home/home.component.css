@@ -1,9 +1,6 @@
-.greeting {
+.greet {
     padding-top: 120px;
     text-align: center;
-}
-
-.greet {
     font-size: 20px;
     color: antiquewhite;
     margin-bottom: 30px;
@@ -12,12 +9,12 @@
 .advert {
     font-size: 30px;
     font-style: italic;
-    color: navajowhite;
+    color: navajowhite; 
 }
 
 img {
     width: 50%;
-    height: 260px;
+    height: 330px;
     border: 1px solid mediumvioletred;
     margin-top: 15px;
 }

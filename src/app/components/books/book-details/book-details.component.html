@@ -1,10 +1,18 @@
+
 <div id="details">
-    <h3>{{ book.title }}</h3>
-    <img class="articleImg" src="{{ book.cover }}" alt="image">
-    <div class="block">
-        <p><span>Author: </span>{{ book.author }}</p>
-        <p><span>Genre: </span>{{ book.genre }}</p>
-        <p><span>Price: </span> ${{ book.price }}</p>
+    <a [routerLink]="['/books']">
+        &larr; Archive
+    </a>
+    <div id="border">
+        <h3>{{ book.title }}</h3>
+        <div class="wrapper">
+            <img class="img-responsive" src="{{ book.cover }}" alt="image">
+            <div class="block">
+                <p><span class="key">Author: </span><span class="info">{{ book.author }}</span></p>
+                <p><span class="key">Genre: </span><span class="info">{{ book.genre }}</span></p>
+                <p><span class="key">Price: </span><span class="info">${{ book.price }}</span></p>
+            </div>
+        </div>
+        <p class="review"><span class="key">Review: </span><span class="info">{{ book.description }}</span></p>    
     </div>
-    <p><span>Review: </span>{{ book.description }}</p>    
 </div>

@@ -1,9 +1,9 @@
-
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AuthenticationModule } from './authentication/auth.module';
 import { AppRoutesModule } from './app-routing.module';
+import { SharedModule } from './components/shared/shared.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -21,7 +21,8 @@ import { AuthGuard } from './guards/auth.guard.service';
   imports: [
     BrowserModule,
     AuthenticationModule,
-    AppRoutesModule
+    AppRoutesModule,
+    SharedModule
   ],
   providers: [
     AuthGuard
