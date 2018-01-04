@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BooksService } from '../../../core/services/books/book.service';
 import { BookViewModel } from '../../../core/models/book-view.model';
+
 import { AuthenticationService } from '../../../authentication/auth.service';
+import { BooksService } from '../../../core/services/books/book.service';
+import { AdminService } from '../../../core/services/admin/admin.service';
 
 @Component({
     templateUrl: '/books-list.component.html',
@@ -10,13 +12,16 @@ import { AuthenticationService } from '../../../authentication/auth.service';
 })
 export class BooksListComponent implements OnInit {
     public books : BookViewModel[]
-
+    isAdmin: boolean;
+    
     constructor(
         private booksService : BooksService,
-        private authService : AuthenticationService        
-    ) { }
+        private authService : AuthenticationService,
+        private adminService: AdminService        
+    ) {  }
 
     ngOnInit() {
         this.books = this.booksService.getAllBooks();
+        this.isAdmin = this.adminService.isAdmin();        
     }
 }

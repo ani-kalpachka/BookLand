@@ -1,0 +1,32 @@
+<div class="container body-container">
+    <div class="row">
+      
+      <form class="col-md-4" (ngSubmit)="addBook()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title"
+           placeholder="Title" required [(ngModel)]="model.title" name="title" #title="ngModel">
+        </div>
+        <button id="submit" name="submit" class="btn btn-primary">Add book</button>
+      </form>
+     
+    </div>
+    <br/>
+
+    <div class="row">
+      <div *ngFor="let book of books">
+        <div class="col-md-2">
+          <div class="card">
+            <a href="#">
+            </a>
+            <div>
+              <h4>
+                <a href="#">{{item.title}}</a>
+              </h4>
+              <button>Read more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

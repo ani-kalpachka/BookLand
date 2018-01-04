@@ -1,8 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from "@angular/common/http";
+
+import { Observable } from "rxjs/Observable";
+
 import { BookViewModel } from '../../models/book-view.model';
+
+const appKey = "kid_Bkm4aEtmM";
+const appSecret = "ca47356218f045758a94ea07019ab4ab";
+const registerUrl = `https://baas.kinvey.com/user/${appKey}`;
+const loginUrl = `https://baas.kinvey.com/user/${appKey}/login`;
+const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
+const host = `https://baas.kinvey.com/appdata`;
 
 @Injectable()
 export class BooksService {
+    constructor(private http: HttpClient) {
+    }
+
     books : BookViewModel[] = [
         new BookViewModel(1, 'The Dead Zone', 'https://images.gr-assets.com/books/1347770192l/2395869.jpg', 'Stephen King', 'Mystery, Thriller', 'Johnny Smith, a young teacher in a small provincial town, is the victim of a car accident, shortly after having accompanied his girlfriend, Sarah. He wakes up after five years of coma. Sarah is now married. He realizes that past, present and future are confused in his mind and he gets the accursed power - the power to see the future and the terrible fate awaiting mankind in The Dead Zone. This is how he manages to save the child of his nurse from a fire and reveals to his doctor that his mother, whom he thought was deported, is in fact still alive.', 13),
         new BookViewModel(2, 'The Lord of the Rings', 'https://images.gr-assets.com/books/1411114164l/33.jpg', 'J.R.R. Tolkien', 'Epic high fantasy', 'In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit. In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose.', 21.95),
@@ -16,11 +30,27 @@ export class BooksService {
         new BookViewModel(10, 'Fourty Rules of Love', 'https://images-na.ssl-images-amazon.com/images/I/51SR9ESu4hL._SX323_BO1,204,203,200_.jpg', 'Elif Shafak', 'Historical Fiction', 'Ella Rubenstein is forty years old and unhappily married when she takes a job as a reader for a literary agent. Her first assignment is to read and report on Sweet Blasphemy, a novel written by a man named Aziz Zahara. Ella is mesmerized by his tale of Shams\'s search for Rumi and the dervish\'s role in transforming the successful but unhappy cleric into a committed mystic, passionate poet, and advocate of love. She is also taken with Shams\'s lessons, or rules, that offer insight into an ancient philosophy based on the unity of all people and religions, and the presence of love in each and every one of us. As she reads on, she realizes that Rumi\'s story mir­rors her own and that Zahara like Shams has come to set her free.', 8.95),
     ];
 
-    getAllBooks() : BookViewModel[] {
+    getAllBooks() : BookViewModel[] {  
         return this.books;
     }
 
     getBookById(bookId : number) : BookViewModel {
         return this.books.find(b => b.id === bookId);
+    }
+
+    getBooks(): Observable<any> {
+        return this.http.get(`${host}/${appKey}/books`, {
+            headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(`guest:guest`))
+              .set('Content-Type', 'application/json')
+          });
+    }
+
+    addBook(bookModel): Observable<any> {
+        const body = JSON.stringify(bookModel);      
+        console.log(localStorage.getItem('authtoken'))  
+        return this.http.post(`${host}/${appKey}/books`, body, {
+          headers: new HttpHeaders().set('Authorization', 'Kinvey ' + localStorage.getItem('authtoken'))
+            .set('Content-Type', 'application/json')
+        });
     }
 } 

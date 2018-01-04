@@ -1,10 +1,12 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Observable } from 'rxjs/Observable';
 
-// Models
 import { RegisterModel } from './models/register.model';
 import { LoginModel } from './models/login.model';
+
+import { AdminService } from '../core/services/admin/admin.service';
 
 const appKey = "kid_Bkm4aEtmM";
 const appSecret = "ca47356218f045758a94ea07019ab4ab";
@@ -58,6 +60,14 @@ export class AuthenticationService {
 
     return authtoken === this.currentAuthtoken;
   }
+
+  isUserAdmin(){
+    if(localStorage.getItem('username') === 'ani'){
+        return true;
+    } else{ 
+        return false;
+    }
+}
 
   get authtoken() {
     return this.currentAuthtoken;

@@ -1,3 +1,4 @@
+//Modules
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,6 +7,7 @@ import { RegisterFormComponent } from './authentication/register-form/register-f
 import { LoginFormComponent } from './authentication/login-form/login-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { LogoutComponent } from './authentication/logout-component/logout.component';
+import { AddBookComponent } from '../app/components/books/add-book/add-book.component';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard.service';
@@ -16,7 +18,8 @@ const routes : Routes = [
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'books', canActivate: [ AuthGuard ], loadChildren: "app/components/books/books.module#BooksModule" }  
+  { path: 'books', canActivate: [ AuthGuard ], loadChildren: "app/components/books/books.module#BooksModule" },
+  { path: 'addbook', canActivate: [ AuthGuard ], component: AddBookComponent },  
 ]
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

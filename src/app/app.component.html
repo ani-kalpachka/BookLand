@@ -11,7 +11,10 @@
     <div *ngIf="authService.isLoggedIn()">
       <a routerLink="/home">Home</a>
       <a routerLink="/books">All Books</a>
-      <a routerLink="/logout">Logout</a>
+      <a routerLink="/logout">Logout</a>     
+    </div>
+    <div *ngIf="authService.isUserAdmin()">
+      <a routerLink="/addbook">Add Book</a> 
     </div>
   </nav>
 
