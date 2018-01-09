@@ -20,7 +20,7 @@ export class AddBookComponent implements OnInit {
   books: [BookViewModel]
 
   constructor(private bookService: BooksService, private adminService: AdminService, private router: Router) {
-    this.model = new AddBookModel("", "", "", "", "", "", "");
+    this.model = new AddBookModel();
     this.checker = true;
   }
 
@@ -45,7 +45,7 @@ export class AddBookComponent implements OnInit {
 
     if (this.checker) {
       this.bookService.addBook(this.model).subscribe(data => {
-        this.model = new AddBookModel("", "", "", "", "", "", "");
+        this.model = new AddBookModel();
         this.bookService.getBooks().subscribe(data => {
           this.books = data;
         });

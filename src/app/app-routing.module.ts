@@ -20,7 +20,7 @@ const routes : Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'books', canActivate: [ AuthGuard ], loadChildren: "app/components/books/books.module#BooksModule" },
-  { path: 'addbook', component: AddBookComponent },  
+  { path: 'addbook', canActivate: [ AuthGuard ], component: AddBookComponent },  
   { path: 'books/details/:id', component: BookDetailsComponent },  
 ]
 @NgModule({
