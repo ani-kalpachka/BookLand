@@ -8,9 +8,11 @@ import { AuthenticationService } from '../../authentication/auth.service';
 })
 export class HomeComponent { 
   public username : string;
+  public password : string;
   private authService : AuthenticationService;
 
   constructor() {
     this.username = localStorage.getItem('username');
+    this.password = localStorage.getItem('password');
   }
 }

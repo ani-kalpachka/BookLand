@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationModule } from './authentication/auth.module';
 import { AppRoutesModule } from './app-routing.module';
 import { SharedModule } from './components/shared/shared.module';
+import { BooksModule } from './components/books/books.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { AdminService } from './core/services/admin/admin.service';
     AuthenticationModule,
     AppRoutesModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    BooksModule
   ],
   providers: [
     AuthGuard,

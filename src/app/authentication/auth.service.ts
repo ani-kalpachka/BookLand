@@ -93,7 +93,7 @@ export class AuthenticationService {
 
   getUser(){
     let name = localStorage.getItem('username');
-    let pass = localStorage.getItem('pass');
-    return { name: name, pass: pass}
+    let password = localStorage.getItem('password');
+    return { name: name, password: password}
   }
 }

@@ -7,9 +7,9 @@ export class AdminService {
     }
 
     isAdmin(){
-        if(localStorage.getItem('username') === 'ani'){
+        if (localStorage.getItem('username') === 'ani') {
             return true;
-        } else{ 
+        } else { 
             return false;
         }
     }  
@@ -23,6 +23,6 @@ export class AdminService {
     }
 
     getLoggedUser(){
-        return localStorage.getItem('username');
+        return localStorage.getItem('username'), localStorage.getItem('password');
     }
 }

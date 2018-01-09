@@ -6,9 +6,9 @@
                 {{ book.title }}
             </a>
             <img class="img-responsive" src="{{ book.cover }}" alt="image">    
-            <button *ngIf="isAdmin" type="button" class="btn btn-default btn-sm" (click)="deleteBook(item._id)">
+            <button *ngIf="isAdmin" type="button" class="btn btn-default btn-sm" (click)="deleteBook(book._id)">
                 <span class=" glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
-              </button>    
+            </button>    
         </li>
     </ul>
 </div>

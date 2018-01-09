@@ -42,8 +42,7 @@ export class AddBookComponent implements OnInit {
     let d = new Date();
     let strDate = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
     this.model.author = localStorage.getItem('username');
-    //this.model.date = strDate;
-    //this.checker = this.validationService.validateObj(this.model);
+
     if (this.checker) {
       this.bookService.addBook(this.model).subscribe(data => {
         this.model = new AddBookModel("", "", "", "", "", "", "");

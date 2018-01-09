@@ -14,13 +14,15 @@ export class LoginFormComponent {
   public model : LoginModel;
   public loginFail : boolean;
   public username : string;
-
+  public password : string;
+  
   constructor(
     private authService : AuthenticationService,
     private router : Router
   ) {
     this.model = new LoginModel("", "");
     this.username = "";
+    this.password = "";
   }
 
   login () : void {
@@ -43,6 +45,7 @@ export class LoginFormComponent {
     this.authService.authtoken = data['_kmd']['authtoken'];
     localStorage.setItem('authtoken', data['_kmd']['authtoken']);
     localStorage.setItem('username', data['username']);
+    localStorage.setItem('password', data['password']);
     this.loginFail = false;
     this.router.navigate(['/home']);
   }
