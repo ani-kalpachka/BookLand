@@ -38,7 +38,7 @@ export class BookDetailsComponent implements OnInit {
       this.bookService.bookDetails(params['id']).subscribe(data => {
         this.model._id = params['id'];
         this.model.title = data.title;
-        this.model.author = data.author;
+        this.model.bookAuthor = data.bookAuthor;
         this.model.description = data.description;
         this.model.price = data.price;
         this.model.cover = data.cover;

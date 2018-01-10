@@ -29,24 +29,24 @@
             </div>
 
             <div class="field">                
-                <label for="author">Author:</label>
+                <label for="bookAuthor">Author:</label>
                 <input type="text" 
                        class="form-control" 
-                       id="author"
+                       id="bookAuthor"
                        placeholder="Author" 
-                       required [(ngModel)]="model.author" 
-                       name="author" 
-                       #author="ngModel"
+                       required [(ngModel)]="model.bookAuthor" 
+                       name="bookAuthor" 
+                       #bookAuthor="ngModel"
                 />
             </div>
 
             <div class="field">                
-                <label for="author">Genre:</label>
+                <label for="genre">Genre:</label>
                 <input type="text" 
                        class="form-control" 
                        id="genre"
                        placeholder="Genre" 
-                       required [(ngModel)]="genre.author" 
+                       required [(ngModel)]="model.genre" 
                        name="genre" 
                        #genre="ngModel"
                 />
@@ -64,7 +64,7 @@
             </div>
 
             <div class="field">                
-                <label for="author">Price:</label>
+                <label for="price">Price:</label>
                 <input type="number" 
                        class="form-control" 
                        id="price"

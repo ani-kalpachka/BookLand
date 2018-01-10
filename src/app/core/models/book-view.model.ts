@@ -3,7 +3,7 @@ export class BookViewModel {
         public _id?: number,
         public title?: string,
         public cover?: string,        
-        public author?: string,
+        public bookAuthor?: string,
         public genre?: string,
         public description?: string,
         public price?: number
