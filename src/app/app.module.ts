@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
 import { BookDetailsComponent } from './components/books/book-details/book-details.component';
+import { EditBookComponent } from './components/books/edit-book/edit-book.component';
 
 // Services
 import { AuthGuard } from './guards/auth.guard.service';
@@ -24,7 +25,8 @@ import { AdminService } from './core/services/admin/admin.service';
     AppComponent,
     HomeComponent,
     AddBookComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,

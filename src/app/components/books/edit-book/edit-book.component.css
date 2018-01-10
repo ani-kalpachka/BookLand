@@ -1,0 +1,44 @@
+.body-container{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+h2 {
+    text-align: center;
+    color: #7f0b0b;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+label {
+    color: navajowhite;
+    font-size: 17px;
+}
+
+button {
+    margin-top: 30px;
+    color: brown;
+    border: 1px solid brown;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: navajowhite;
+    width: 23%;
+    height: 35px;
+    border-radius: 7px;
+}
+
+button:hover {
+    background-color: white;
+}

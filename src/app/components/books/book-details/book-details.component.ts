@@ -46,4 +46,8 @@ export class BookDetailsComponent implements OnInit {
       })
     });
   }
+
+  editBook(_id) {
+    this.router.navigate(['books/edit/' + _id]);
+  }
 }
