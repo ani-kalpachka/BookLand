@@ -43,7 +43,7 @@ export class BooksListComponent implements OnInit {
     this.router.navigate(['books/edit/' + _id]);
   }
 
-  detailsBooks(id) {
-    this.router.navigate(['books/details/' + id]);
+  bookDetails(_id) {
+    this.router.navigate(['books/details/' + _id]);
   }
 }

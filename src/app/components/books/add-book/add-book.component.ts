@@ -34,10 +34,6 @@ export class AddBookComponent implements OnInit {
       })
   }
 
-  editBook(_id) {
-    this.router.navigate(['books/details/' + _id]);
-  }
-
   addBook() {
     let d = new Date();
     let strDate = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();

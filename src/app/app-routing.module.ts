@@ -8,7 +8,7 @@ import { LoginFormComponent } from './authentication/login-form/login-form.compo
 import { HomeComponent } from './components/home/home.component';
 import { LogoutComponent } from './authentication/logout-component/logout.component';
 import { AddBookComponent } from '../app/components/books/add-book/add-book.component';
-import { BookDetailsComponent } from '../app/components/books/book-details/book-details.component';
+import { BookDetailsComponent } from './components/books/book-details/book-details.component';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard.service';
@@ -21,7 +21,7 @@ const routes : Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'books', canActivate: [ AuthGuard ], loadChildren: "app/components/books/books.module#BooksModule" },
   { path: 'addbook', canActivate: [ AuthGuard ], component: AddBookComponent },  
-  { path: 'books/details/:id', component: BookDetailsComponent },  
+  { path: 'books/details/:id', component: BookDetailsComponent }
 ]
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

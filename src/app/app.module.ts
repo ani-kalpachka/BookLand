@@ -12,6 +12,7 @@ import { BooksModule } from './components/books/books.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
+import { BookDetailsComponent } from './components/books/book-details/book-details.component';
 
 // Services
 import { AuthGuard } from './guards/auth.guard.service';
@@ -22,7 +23,8 @@ import { AdminService } from './core/services/admin/admin.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    AddBookComponent
+    AddBookComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,

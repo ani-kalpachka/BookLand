@@ -6,12 +6,13 @@ import { AdminService } from '../../../core/services/admin/admin.service';
 import { AuthenticationService } from '../../../authentication/auth.service';
 
 @Component({
-  selector: 'detail-book',
+  selector: 'book-details-component',
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  book: BookViewModel;
+  model: BookViewModel;
+  books: [BookViewModel];
   isAdmin: boolean;
   success: boolean;
   fail: boolean;
@@ -26,23 +27,22 @@ export class BookDetailsComponent implements OnInit {
     private adminService: AdminService,
     private authService: AuthenticationService
   ) {
-    this.book = new BookViewModel();
+    this.model = new BookViewModel();
     this.isLogged = this.adminService.isUserLogged();
   }
 
   ngOnInit() {
-    console.log(this.book);
     this.loggedUser = this.adminService.getLoggedUser();
     this.isAdmin = this.adminService.isAdmin();
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.bookService.detailsBooks(params['_id']).subscribe(data => {
-        this.book.id = params['_id'];
-        this.book.title = data.title;
-        this.book.cover = data.cover;
-        this.book.author = data.author;
-        this.book.genre = data.genre;
-        this.book.description = data.description;
-        this.book.price = data.price;
+      this.bookService.bookDetails(params['id']).subscribe(data => {
+        this.model._id = params['id'];
+        this.model.title = data.title;
+        this.model.author = data.author;
+        this.model.description = data.description;
+        this.model.price = data.price;
+        this.model.cover = data.cover;
+        this.model.genre = data.genre;
       })
     });
   }
